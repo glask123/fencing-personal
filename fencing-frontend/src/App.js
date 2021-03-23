@@ -1,17 +1,18 @@
 import logo from "./logo.svg";
 import "./App.css";
+import Home from "./components/home.jsx";
+import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
+import Add from "./components/add.jsx";
 
 function App() {
   return (
-    <div className="App">
-      <div className="label">hello</div>
-      <div className="tournaments">
-        <div className="tournament">hello</div>
-        <div className="tournament">hello</div>
-        <div className="tournament">hello</div>
-        <div className="tournament">hello</div>
-      </div>
-    </div>
+    <Router>
+      <Switch>
+        <Route exact path="/" component={Home}></Route>
+        <Route path="/add" component={Add}></Route>
+        <Route path="/remove"></Route>
+      </Switch>
+    </Router>
   );
 }
 
